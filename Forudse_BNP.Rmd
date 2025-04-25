@@ -1,0 +1,57 @@
+
+```{r}
+library(readxl)
+library(mosaic)
+```
+
+BNP for 1990-2024
+```{r}
+data <- read_excel("newGDP.xlsx")
+data$AAR <- as.numeric(as.character(data$AAR))
+data$BNP <- as.numeric(as.character(data$BNP))
+
+model <- lm(BNP~AAR,data=data)
+summary(model)
+
+gf_point(BNP~AAR,data=data) %>%
+  gf_lm()  
+```
+
+
+BNP for 2021-2023
+```{r}
+data2 <- read_excel("BNP21-23.xlsx")
+data2$AAR <- as.numeric(as.character(data2$AAR))
+data2$BNP <- as.numeric(as.character(data2$BNP))
+model2 <- lm(BNP~AAR,data=data2)
+summary(model2)
+gf_point(BNP~AAR,data=data2) %>%
+  gf_lm()  
+```
+
+
+BNP uden nettoexport 2014-2024
+```{r}
+BNP_adj <- read_excel("BNP_adj.xlsx")
+BNP_adj$AAR <- as.numeric(as.character(BNP_adj$AAR))
+BNP_adj$BNP <- as.numeric(as.character(BNP_adj$BNP))
+model3 <- lm(BNP~AAR,data=BNP_adj)
+summary(model3)
+gf_point(BNP~AAR,data=BNP_adj) %>%
+  gf_lm()  
+
+```
+
+
+
+BNP uden nettoexport 2021-2023
+```{r}
+BNP_adj2 <- read_excel("BNP_adj_21-23.xlsx")
+BNP_adj2$AAR <- as.numeric(as.character(BNP_adj2$AAR))
+BNP_adj2$BNP <- as.numeric(as.character(BNP_adj2$BNP))
+model4 <- lm(BNP~AAR,data=BNP_adj2)
+summary(model4)
+gf_point(BNP~AAR,data=BNP_adj2) %>%
+  gf_lm()  
+
+```
