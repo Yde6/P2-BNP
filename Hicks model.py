@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 Y0 = 2407.3  # Initial condition Y_0^(1)
 Y1 = 2572.4  # Initial condition Y_1^(1)
 a = 491.11  # Parameter a
-b = 0.815  # Parameter b
-k = 0.1813  # Parameter k
+b = 0.8111  # Parameter b
+k = 0.1495  # Parameter k
 g = 0.0254  # Parameter g
-NUM_STEPS = 10  # Number of time stepss
+NUM_STEPS = 5  # Number of time stepss
 
 def solve_difference_equation_iteratively():
     """
