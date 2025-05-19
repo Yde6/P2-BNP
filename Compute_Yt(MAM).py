@@ -1,8 +1,8 @@
 import numpy as np
 
 # Parameters
-lambda1 = 0.75105
-lambda2 = 0.21845
+lambda1 = 0.7506
+lambda2 = 0.2189
 Y1_0 = 2407.3
 Y2_0 = 2572.4
 G = 613.5
